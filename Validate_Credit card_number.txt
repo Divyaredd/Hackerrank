@@ -1,0 +1,18 @@
+##Question: https://www.hackerrank.com/challenges/validating-credit-card-number/forum
+
+
+
+import re
+for j in range(int(input())):
+    m=input().strip()
+    pre_match = re.search(r'^[456]\d{3}(-?)\d{4}\1\d{4}\1\d{4}$',m)
+    if pre_match:
+        processed_string="".join(pre_match.group(0).split('-'))
+        final_match = re.search(r'(\d)\1{3,}',processed_string)
+        if final_match:
+            print('invalid')
+        else:
+            print('valid')
+    else:
+        print('invalid')
+    
