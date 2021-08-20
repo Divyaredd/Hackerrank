@@ -1,0 +1,43 @@
+# Validating postal codes
+
+def validZipcode(s):
+    return s.isdigit() and (len(s) == 6) and (s[0] != '0') and (alternative(s) <= 1)
+
+def alternative(s):
+    c = 0
+    for i in range(4):
+        c += (s[i] == s[i + 2])
+    return c
+    
+s = input()
+print(validZipcode(s))
+
+
+
+import re
+P = input()
+
+print (bool(re.match(regex_integer_in_range, P)) 
+and len(re.findall(regex_alternating_repetitive_digit_pair, P)) < 
+
+#Maximize it
+
+from itertools import product
+S, Q = map(int, input().split())
+L = []
+for _ in range(S):
+    L.append(list(map(int, input().split()))[1:])
+    
+print(max(sum(x ** 2 for x in val) % Q for val in product(*L)))
+
+
+#Binary Tree Nodes
+
+SELECT N, IF(P IS NULL,'Root',IF((SELECT COUNT(*) FROM BST WHERE P=B.N)>0,'Inner','Leaf')) FROM BST AS B ORDER BY N;
+
+#New Companies
+
+select E.company_code, C.founder, count(distinct lead_manager_code), count(distinct senior_manager_code), count(distinct manager_code), count(distinct employee_code) from Employee E inner join Company C on E.company_code = C.company_code group by E.company_code, C.founder order by E.company_code
+
+
+
